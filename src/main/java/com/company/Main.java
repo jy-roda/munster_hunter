@@ -46,21 +46,21 @@ public class Main {
                 joueurs.add(j);
             }
 
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-
-
-
-
-
-
-
-
-
     }
+
+
+    public double getAverageMMR() {
+        double average = 0;
+        for (Joueur j : joueurs){
+            average += j.getMmr();
+        }
+        return ( average / joueurs.size());
+    }
+
+
 }
