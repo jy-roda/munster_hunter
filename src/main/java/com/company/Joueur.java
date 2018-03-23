@@ -33,4 +33,13 @@ public class Joueur {
     public void setMmr(int mmr) {
         this.mmr = mmr;
     }
+
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "pseudo='" + pseudo + '\'' +
+                ", id=" + id +
+                ", mmr=" + mmr +
+                '}';
+    }
 }
