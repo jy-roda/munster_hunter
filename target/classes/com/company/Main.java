@@ -35,32 +35,41 @@ public class Main {
         JSONParser parser = new JSONParser();
         try {
             FileReader r = new FileReader("players.json");
-            JSONArray a = (JSONArray) parser.parse(r);
 
+            JSONArray a = (JSONArray) parser.parse(r);
+            int cpt = 0;
             for (Object o : a) {
+                if (cpt == 4 ){
+                    cpt = 0;
+                }
+                cpt ++;
                 int rand = (int) (Math.random() * ( 2000 - 100));
                 JSONObject player = (JSONObject) o;
-                Joueur j = new Joueur((String) player.get("playerID"),  toIntExact((Long)player.get("id")),0 );
+                //Joueur(String pseudo, int id, int mmr, int hr, Role role) {
+
+                Joueur j = new Joueur((String) player.get("playerID"),  toIntExact((Long)player.get("id")),0,
+                        toIntExact((Long)player.get("HR")), (String) player.get("role"), toIntExact((Long)player.get("time")  ));
                 j.setMmr(rand);
                 System.out.println(j.toString());
+
                 joueurs.add(j);
             }
-
-
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-
-
-
-
-
-
-
-
-
     }
+
+
+    public double getAverageMMR() {
+        double average = 0;
+        for (Joueur j : joueurs){
+            average += j.getMmr();
+        }
+        return ( average / joueurs.size());
+    }
+
+
 }
