@@ -49,6 +49,15 @@ public class Main {
                 System.out.println(j.toString());
 
                 joueurs.add(j);
+
+
+            }
+
+            MatchMaker matchMaker = new MatchMaker(joueurs);
+            System.out.println("Nombre d'équipes max : " + matchMaker.maxTeams());
+            ArrayList<Guilde> teams = matchMaker.getTeams();
+            for (Guilde g : teams) {
+                System.out.println(g.toString());
             }
 
         } catch (Exception e) {
@@ -56,7 +65,7 @@ public class Main {
         }
     }
 
-    public double getAverageMMR() {
+    public static double getAverageMMR() {
         double average = 0;
         for (Joueur j : joueurs){
             average += j.getMmr();
