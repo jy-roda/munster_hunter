@@ -20,17 +20,13 @@ public class Main {
 
     public static void main(String[] args) {
 	    // write your code here
-
         joueurs = new ArrayList<Joueur>();
-
         /*  Imports en JSON
-
             JSONObject object = new JSONObject(theString);
             JSONArray results = object.getJSONArray("items");
             JSONObject videoData = results.getJSONObject(0);
             JSONObject videoID = videoData.getJSONObject("id");
             if (videoID.getString("kind").equals("youtube#video")) {
-
          */
         JSONParser parser = new JSONParser();
         try {
@@ -48,22 +44,28 @@ public class Main {
                 //Joueur(String pseudo, int id, int mmr, int hr, Role role) {
 
                 Joueur j = new Joueur((String) player.get("playerID"),  toIntExact((Long)player.get("id")),0,
-                        toIntExact((Long)player.get("HR")), (String) player.get("role"), toIntExact((Long)player.get("time")  ));
+                        toIntExact((Long)player.get("HR")), (String) player.get("role"), toIntExact((Long)player.get("time")));
                 j.setMmr(rand);
                 System.out.println(j.toString());
 
                 joueurs.add(j);
+
+
+            }
+
+            MatchMaker matchMaker = new MatchMaker(joueurs);
+            System.out.println("Nombre d'équipes max : " + matchMaker.maxTeams());
+            ArrayList<Guilde> teams = matchMaker.getTeams();
+            for (Guilde g : teams) {
+                System.out.println(g.toString());
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
-
-    public double getAverageMMR() {
+    public static double getAverageMMR() {
         double average = 0;
         for (Joueur j : joueurs){
             average += j.getMmr();

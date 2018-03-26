@@ -54,6 +54,10 @@ public class Joueur {
         this.mmr = mmr;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     @Override
     public String toString() {
         return "Joueur{" +

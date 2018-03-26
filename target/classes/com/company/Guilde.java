@@ -26,4 +26,18 @@ public class Guilde {
     public LinkedList<Joueur> getJoueurs() {
         return joueurs;
     }
+
+    public Double getMMR() {
+        double mmr = 0;
+        for (Joueur j : joueurs) {
+            mmr += j.getMmr();
+        }
+        return mmr / 4;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Guilde de " + joueurs.get(0).getPseudo() + ", MMR moyen : " + getMMR();
+    }
 }
