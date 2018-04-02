@@ -60,13 +60,9 @@ public class Joueur {
 
     @Override
     public String toString() {
-        return "Joueur{" +
-                "pseudo='" + pseudo + '\'' +
-                ", role='" + role + '\'' +
-                ", id=" + id +
-                ", mmr=" + mmr +
-                ", hr=" + hr +
-                ", time=" + time +
-                '}';
+        return "| Joueur : " + this.getPseudo() + " | Rôle : " + this.getRole()
+                + " | Identifiant N° " + this.getId()+ " | MMR : "  + this.getMmr()
+                + " | Heure de jeu : " +this.getTime() + " | Rand de Chasseur : "
+                + this.getHr() + " | " +  '\n'+ '\n';
     }
 }
