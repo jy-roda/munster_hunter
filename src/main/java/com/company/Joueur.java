@@ -62,7 +62,7 @@ public class Joueur {
     public String toString() {
         return "| Joueur : " + this.getPseudo() + " | Rôle : " + this.getRole()
                 + " | Identifiant N° " + this.getId()+ " | MMR : "  + this.getMmr()
-                + " | Heure de jeu : " +this.getTime() + " | Rand de Chasseur : "
+                + " | Heure de jeu : " +this.getTime() + " | Rang de Chasseur : "
                 + this.getHr() + " | " +  '\n'+ '\n';
     }
 }

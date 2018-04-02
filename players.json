@@ -14,7 +14,7 @@
 { "playerID": "Salsciastsu", "id": 14, "HR": 54, "role": "DPS", "time": 145 },
 { "playerID": "Deathmee", "id": 15, "HR": 19, "role": "DPS", "time": 47 },
 { "playerID": "Gulrien", "id": 16, "HR": 38, "role": "DPS", "time": 115 },
-{ "playerID": "Chris", "id9": 17, "HR": 12, "role": "DPS", "time": 65 },
+{ "playerID": "Chris", "id": 17, "HR": 12, "role": "DPS", "time": 65 },
 { "playerID": "ZaWarudo", "id": 18, "HR": 97, "role": "DPS", "time": 132 },
 { "playerID": "JeanDuX9", "id": 19, "HR": 54, "role": "DPS", "time": 110 },
 { "playerID": "Manaczin", "id": 20, "HR": 85, "role": "DPS", "time": 120 },
