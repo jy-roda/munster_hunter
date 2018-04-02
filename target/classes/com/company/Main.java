@@ -32,7 +32,7 @@ public class Main extends Application {
     public Label liste2;
     public Button Lancer;
 
-    public static   void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         try {
             launch(args);
 
@@ -50,8 +50,6 @@ public class Main extends Application {
         }
         return ( average / joueurs.size());
     }
-
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -63,9 +61,7 @@ public class Main extends Application {
         stage.setScene(scene);
 
         stage.show();
-
     }
-
     public void MatchMaking(ActionEvent actionEvent) {
         liste.setText("");
         StringBuilder Guilde = new StringBuilder(" ");
